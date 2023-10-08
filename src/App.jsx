@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './components/Home';
-import { One } from './components/One';
-import { Two } from './components/Two';
-import { Three } from './components/Three';
-import { Score } from './components/Score';
-import { Features } from './components/Features';
+import One from './components/One';
+import Two from './components/Two';
+import Three from './components/Three';
+import Score from './components/Score';
+import Features from './components/Features';
 
 function App() {
   const [Techstack, setTechstack] = useState({
@@ -43,10 +43,10 @@ const addFeatures = (features) =>{
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/one" element={<One addMedium={addMedium} Techstack={Techstack} />} />
-        <Route path="/two" element={<Two />} />
-        <Route path="/three" element={<Three />} />
-        <Route path="/features" element={<Features />} /> 
-        <Route path="/score" element={<Score />} />
+        <Route path="/two" element={<Two addLanguage={addLanguage} Techstack={Techstack} />} />
+        <Route path="/three" element={<Three addDatabase={addDatabase}  Techstack={Techstack}/>} />
+        <Route path="/features" element={<Features addFeatures={addFeatures}  Techstack={Techstack}/>} /> 
+        <Route path="/score" element={<Score Techstack={Techstack} />} />
       </Routes>
     </>
   );

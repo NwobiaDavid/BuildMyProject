@@ -1,7 +1,9 @@
 
 
-export const Score = () => {
+export default function Score() {
   return (
-    <div>Score</div>
+    <div>
+      Score
+    </div>
   )
 }

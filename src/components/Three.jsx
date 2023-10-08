@@ -1,7 +1,8 @@
 
-
-export const Three = () => {
+export default function Three() {
   return (
-    <div>Three</div>
+    <div>
+      Three
+    </div>
   )
 }
