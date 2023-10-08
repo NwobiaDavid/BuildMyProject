@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import {AnimatePresence} from 'framer-motion';
 import { Home } from './components/Home';
 import One from './components/One';
 import Two from './components/Two';
@@ -9,6 +10,8 @@ import Features from './components/Features';
 import Navbar from './components/Navbar';
 
 function App() {
+  const location = useLocation();
+
   const [Techstack, setTechstack] = useState({
     medium: "",
     language: "",
@@ -41,16 +44,20 @@ const addFeatures = (features) =>{
 
   return (
     <>
-      <Navbar />
-      <div className="h-screen flex flex-col justify-center items-center w-screen">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/one" element={<One addMedium={addMedium} Techstack={Techstack} />} />
-          <Route path="/two" element={<Two addLanguage={addLanguage} Techstack={Techstack} />} />
-          <Route path="/three" element={<Three addDatabase={addDatabase}  Techstack={Techstack}/>} />
-          <Route path="/features" element={<Features addFeatures={addFeatures}  Techstack={Techstack}/>} />
-          <Route path="/score" element={<Score Techstack={Techstack} />} />
-        </Routes>
+      <div className="h-screen w-screen overflow-hidden">
+          <Navbar />
+        <div className="flex h-[90%] flex-col justify-center items-center ">
+          <AnimatePresence mode='wait'>
+            <Routes location={location} key={location.key}>
+              <Route path="/" element={<Home />} />
+              <Route path="/one" element={<One addMedium={addMedium} Techstack={Techstack} />} />
+              <Route path="/two" element={<Two addLanguage={addLanguage} Techstack={Techstack} />} />
+              <Route path="/three" element={<Three addDatabase={addDatabase}  Techstack={Techstack}/>} />
+              <Route path="/features" element={<Features addFeatures={addFeatures}  Techstack={Techstack}/>} />
+              <Route path="/score" element={<Score Techstack={Techstack} />} />
+            </Routes>
+          </AnimatePresence>
+        </div>
       </div>
     </>
   );
