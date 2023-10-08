@@ -6,6 +6,7 @@ import Two from './components/Two';
 import Three from './components/Three';
 import Score from './components/Score';
 import Features from './components/Features';
+import Navbar from './components/Navbar';
 
 function App() {
   const [Techstack, setTechstack] = useState({
@@ -40,14 +41,17 @@ const addFeatures = (features) =>{
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/one" element={<One addMedium={addMedium} Techstack={Techstack} />} />
-        <Route path="/two" element={<Two addLanguage={addLanguage} Techstack={Techstack} />} />
-        <Route path="/three" element={<Three addDatabase={addDatabase}  Techstack={Techstack}/>} />
-        <Route path="/features" element={<Features addFeatures={addFeatures}  Techstack={Techstack}/>} /> 
-        <Route path="/score" element={<Score Techstack={Techstack} />} />
-      </Routes>
+      <Navbar />
+      <div className="h-screen flex flex-col justify-center items-center w-screen">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/one" element={<One addMedium={addMedium} Techstack={Techstack} />} />
+          <Route path="/two" element={<Two addLanguage={addLanguage} Techstack={Techstack} />} />
+          <Route path="/three" element={<Three addDatabase={addDatabase}  Techstack={Techstack}/>} />
+          <Route path="/features" element={<Features addFeatures={addFeatures}  Techstack={Techstack}/>} />
+          <Route path="/score" element={<Score Techstack={Techstack} />} />
+        </Routes>
+      </div>
     </>
   );
 }

@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
+
 
 export default function Three({addDatabase, Techstack}) {
   const database = ['mongodb', 'my sql', 'postgres', 'firebase', 'supabase']
