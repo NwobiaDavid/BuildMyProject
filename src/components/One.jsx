@@ -10,7 +10,7 @@ export default function One({Techstack, addMedium}) {
       <h2>what are you trying to build</h2>
       <ul>
         {types.map((item)=>(
-          <li key={item} onClick={()=> addMedium(item)} > {item} </li>
+          <li key={item} onClick={()=> addMedium(item)}> {item} </li>
         ))} 
       </ul>
 
@@ -19,7 +19,7 @@ export default function One({Techstack, addMedium}) {
           <button>next</button>
         </Link>
       )}
-      
+
     </div>
   )
 }
