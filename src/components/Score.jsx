@@ -57,9 +57,9 @@ export default function Score({ Techstack }) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 120 }}
             key={item}
-            className='text-xl capitalize py-2'
+            className='text-xl capitalize py-2  font-semibold'
           >
-          {">>"} {item}
+          {">>"}{item}{"<<"}
           </motion.li>
         ))}
       </ul>
