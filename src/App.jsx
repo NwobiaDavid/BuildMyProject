@@ -8,6 +8,7 @@ import Three from './components/Three';
 import Score from './components/Score';
 import Features from './components/Features';
 import Navbar from './components/Navbar';
+import './index.css'
 
 function App() {
   const location = useLocation();
@@ -44,7 +45,7 @@ const addFeatures = (features) =>{
 
   return (
     <>
-      <div className="h-screen w-screen overflow-hidden">
+      <div className="h-screen w-screen overflow-hidden bg_img" >
           <Navbar />
         <div className="flex h-[85%] flex-col justify-center items-center ">
           <AnimatePresence mode='wait'>
