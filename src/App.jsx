@@ -46,7 +46,7 @@ const addFeatures = (features) =>{
     <>
       <div className="h-screen w-screen overflow-hidden">
           <Navbar />
-        <div className="flex h-[90%] flex-col justify-center items-center ">
+        <div className="flex h-[85%] flex-col justify-center items-center ">
           <AnimatePresence mode='wait'>
             <Routes location={location} key={location.key}>
               <Route path="/" element={<Home />} />

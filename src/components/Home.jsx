@@ -31,7 +31,7 @@ export const Home = () => {
   return (
     <motion.div variants={containerVariant} initial="hidden" animate="visible" exit="exit" className="text-center mb-10">
       <motion.div className="text-9xl font-semibold">Home</motion.div>
-      <Link to="/one"><motion.button whileHover="whileHover" className="border-2 hover:bg-black hover:font-semibold hover:text-white duration-200 border-black mt-14 w-full uppercase rounded-xl p-2">go</motion.button></Link>
+      <Link to="/one"><motion.button whileHover="whileHover" className="border-2 hover:bg-black hover:font-semibold hover:text-white duration-200 border-black mt-14 w-full uppercase rounded-xl py-3">go</motion.button></Link>
     </motion.div>
   )
 }
